@@ -1,10 +1,11 @@
+import javax.swing.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class WestminsterHotelManager {
+public class WestminsterHotelManager implements HotelManager{
     private ArrayList<HotelStaff> hotelStaffList;
     private ArrayList<Guest> hotelGuestList;
     private int staffLimit;
@@ -95,7 +96,7 @@ public class WestminsterHotelManager {
 
                     // Create a new Manager and add to the list
                     Manager manager = new Manager(name, surname);
-                    manager.setLicenseNumber(licenseNum);
+                    manager.setLicenceNumber(licenseNum);
                     manager.setDateOfBirth(date);
                     manager.setStaffID(staffID);
                     this.addStaffToList(manager);
@@ -160,7 +161,7 @@ public class WestminsterHotelManager {
 
         Guest guest = new Guest(name, surname);
         guest.setRoomNumber(roomNum);
-        guest.setNightsStayed(nightsStayed);
+        guest.setNightStayed(nightsStayed);
 
         hotelGuestList.add(guest);
     }

@@ -3,9 +3,8 @@ import java.time.LocalDate;
 public class HouseKeeper extends HotelStaff{
     private int yearsOfExperience;
 
-    public HouseKeeper(String name, String surname, LocalDate dateOfBirth, int yearsOfExperience){
+    public HouseKeeper(String name, String surname){
         super(name, surname);
-        this.yearsOfExperience = yearsOfExperience;
     }
 
     public void setYearsOfExperience(int yearsOfExperience){

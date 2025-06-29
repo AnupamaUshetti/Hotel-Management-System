@@ -13,7 +13,7 @@ public class Guest {
     public void setRoomNumber(int roomNumber){
         this.roomNumber = roomNumber;
     }
-    public void setNightSayed(int nightStayed){
+    public void setNightStayed(int nightStayed){
         this.nightStayed = nightStayed;
     }
 

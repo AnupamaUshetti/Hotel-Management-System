@@ -1,16 +1,14 @@
 import java.time.LocalDate;
 
-public class HotelStaff {
+public abstract class HotelStaff {
     private String name;
     private String surname;
     private LocalDate dateOfBirth;
     private String staffID;
 
-    public HotelStaff(String name, String surname, LocalDate dateOfBirth, String staffID){
+    public HotelStaff(String name, String surname){
         this.name = name;
         this.surname = surname;
-        this.dateOfBirth = dateOfBirth;
-        this.staffID = staffID;
     }
 
     public void setName(String name){

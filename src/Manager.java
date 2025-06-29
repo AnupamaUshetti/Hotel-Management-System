@@ -1,9 +1,8 @@
 public class Manager extends HotelStaff{
     private String licenceNumber;
 
-    public Manager(String name, String surname, String licenceNumber){
+    public Manager(String name, String surname){
         super(name, surname);
-        this.licenceNumber = licenceNumber;
     }
 
     public void setLicenceNumber(String licenceNumber){

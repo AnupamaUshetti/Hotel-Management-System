@@ -1,5 +1,10 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello, World!");
+        HotelManager HotelManager = new WestminsterHotelManager(100);
+        boolean exit = false;
+        while(!exit){
+            exit = HotelManager.runMenu();
+        }
+
     }
 }

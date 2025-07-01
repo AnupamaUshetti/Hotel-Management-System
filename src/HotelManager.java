@@ -4,5 +4,6 @@ public interface HotelManager {
     void printHotelStaffList();
     void addGuest();
     void runGUI();
+    void editStaffName();
 
 }

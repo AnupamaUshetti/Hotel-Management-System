@@ -26,6 +26,7 @@ public class WestminsterHotelManager implements HotelManager{
         System.out.println("To Print the list of staff members press 2");
         System.out.println("To Add a guest, press 3");
         System.out.println("To Open GUI, press 4");
+        System.out.println("To Change Staff name, press 5");
 
         Scanner s = new Scanner(System.in);
         int choice = s.nextInt();
@@ -45,6 +46,9 @@ public class WestminsterHotelManager implements HotelManager{
                 break;
             case 4:
                 this.runGUI();
+                break;
+            case 5:
+                this.editStaffName();
                 break;
         }
         return exit;
@@ -172,4 +176,44 @@ public class WestminsterHotelManager implements HotelManager{
         table.setVisible(true);
     }
 
+    @Override
+    public void editStaffName() {
+        Scanner s = new Scanner(System.in);
+        System.out.println("Enter the Staff ID: ");
+        String searchID = s.nextLine();
+
+        boolean found = false;
+        for (HotelStaff staff : hotelStaffList){
+            if(staff.getStaffID().equalsIgnoreCase(searchID)){
+                System.out.println("Name: " + staff.getName());
+                System.out.println("Surname: " + staff.getSurname());
+                System.out.println("DOB: " + staff.getDateOfBirth());
+
+                if(staff instanceof Manager){
+                    System.out.println("Staff type: Manager");
+                }else if(staff instanceof HouseKeeper){
+                    System.out.println("Staff type: HouseKeeper");
+                }else{
+                    System.out.println("Staff type: Other");
+                }
+
+                System.out.println("Enter a updated name:" );
+                String newName = s.nextLine();
+                staff.setName(newName);
+                System.out.println("Enter a updated Surname:" );
+                String newSurname = s.nextLine();
+                staff.setSurname(newSurname);
+                System.out.println("Name updated successfully" );
+
+                found = true;
+                break;
+            }
+
+        }
+        if(!found) {
+            System.out.println("No such staff");
+        }
+    }
+
 }
+

@@ -28,7 +28,7 @@ public class HotelTableModel extends AbstractTableModel {
         } else if (columnIndex == 1) {
             temp = list.get(rowIndex).getSurname();
         } else if (columnIndex == 2) {
-            temp = list.get(rowIndex).getStringDate();
+            temp = list.get(rowIndex).getDateOfBirth();
         } else if (columnIndex == 3) {
             if (list.get(rowIndex) instanceof Manager) {
                 temp = "Manager";

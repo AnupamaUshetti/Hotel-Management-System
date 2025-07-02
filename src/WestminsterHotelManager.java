@@ -3,6 +3,8 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class WestminsterHotelManager implements HotelManager{
@@ -49,6 +51,9 @@ public class WestminsterHotelManager implements HotelManager{
                 break;
             case 5:
                 this.editStaffName();
+                break;
+            case 6:
+                this.displayStaffByBirthDate();
                 break;
         }
         return exit;
@@ -213,6 +218,21 @@ public class WestminsterHotelManager implements HotelManager{
         if(!found) {
             System.out.println("No such staff");
         }
+    }
+
+    public void displayStaffByBirthDate(){
+        if(hotelStaffList.isEmpty()){
+            System.out.println("There are no staff members in the system");
+            return;
+        }
+
+        Collections.sort(hotelStaffList);
+
+        System.out.println("Hotel Staff List: ");
+        for (HotelStaff staff : hotelStaffList) {
+            System.out.println(staff.toString());
+        }
+
     }
 
 }

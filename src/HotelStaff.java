@@ -1,6 +1,6 @@
 import java.time.LocalDate;
 
-public abstract class HotelStaff {
+public abstract class HotelStaff implements Comparable<HotelStaff> {
     private String name;
     private String surname;
     private LocalDate dateOfBirth;
